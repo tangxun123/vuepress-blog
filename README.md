@@ -4,7 +4,6 @@
 ### npm run docs:build 项目打包
 
 ## 项目结构
-`
 docs
 ├── .vuepress  // 用于存放
 │   ├── dist // 打包文件 放在服务器上
@@ -17,5 +16,3 @@ docs
 └── README.md // 首页图片及描述性句段
 
 package.json  // 包管理文件
-
-`
