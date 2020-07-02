@@ -4,7 +4,7 @@ heroImage: /logo.jpg
 heroText: LX-BLOG
 tagline: lx
 actionText: 首页导航
-actionLink: /SideBar/markDown
+actionLink: /SideBar/studyMenus/npm
 features:
 - title: 简洁至上
   details: 以 Markdown 为中心的项目结构，以最少的配置帮助你专注于写作。

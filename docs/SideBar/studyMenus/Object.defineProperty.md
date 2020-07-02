@@ -1,4 +1,5 @@
-### Object.defineProperty()语法说明
+# Object.defineProperty()语法说明
+
 **Object.defineProperty()** 的作用就是直接在一个对象上定义一个新属性，或者修改一个已经存在的属性
 ```js
 Object.defineProperty(obj, prop, desc)
