@@ -21,7 +21,7 @@ module.exports = {
     sidebar: {
       '/SideBar/Git/': ['Git工作流程及规范'],
       '/SideBar/vue/': ['vuex'],
-      '/SideBar/studyMenus/': ['npm','markDown','babel', 'dist','emotion','Object.defineProperty'],
+      '/SideBar/studyMenus/': ['npm','markDown','babel', 'dist','emotion','Object.defineProperty','call、apply、bind'],
     }
       // [
       //   ["/SideBar/knowledgePoints", "markdown语法"],
