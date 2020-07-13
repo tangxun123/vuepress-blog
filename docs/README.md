@@ -3,7 +3,7 @@ home: true
 heroImage: /logo.jpg
 heroText: LX-BLOG
 tagline: lx
-actionText: 首页导航
+actionText: 学习中心 →
 actionLink: /SideBar/studyMenus/npm
 features:
 - title: 简洁至上

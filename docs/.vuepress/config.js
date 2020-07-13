@@ -11,7 +11,7 @@ module.exports = {
         ariaLabel: "Study Menu",
         items: [
           { text: "Git", link: "/SideBar/Git/Git工作流程及规范" },
-          { text: "vue", link: "/SideBar/vue/vuex" },
+          { text: "G6Demo", link: "/SideBar/G6/G6Demo" },
         ],
       },
       { text: "Github", link: "https://github.com" },
@@ -19,24 +19,44 @@ module.exports = {
     sidebarDepth: 2,
     // 侧栏菜单
     sidebar: {
-      '/SideBar/Git/': ['Git工作流程及规范'],
-      '/SideBar/vue/': ['vuex'],
-      '/SideBar/studyMenus/': ['npm','markDown','babel', 'dist','emotion','Object.defineProperty','call、apply、bind'],
-    }
-      // [
-      //   ["/SideBar/knowledgePoints", "markdown语法"],
-      //   ["/SideBar/babel", "loader、babel版本"],
-      //   ["/SideBar/npm", "npm、nrm、nvm常用命令"],
-      //   ["/SideBar/Object.defineProperty", "Object.defineProperty()"],
-      //   ["/SideBar/dist", "vue项目dist包index文件无法直接打开"],
-      //   ["/SideBar/emotion", "vue项目植入微信表情"],
-      // ]
-    ,
-    lastUpdated: 'Last Updated',
+      "/SideBar/Git/": ["Git工作流程及规范"],
+      "/SideBar/G6/": ["G6Demo"],
+      "/SideBar/studyMenus/": [
+        "npm",
+        "markDown",
+        "babel",
+        "dist",
+        "emotion",
+        "Object.defineProperty",
+        "call、apply、bind",
+        "Array",
+      ],
+    },
+    lastUpdated: "Last Updated",
     configureWebpack: {
       output: {
-        publicPath: '/'
+        publicPath: "/",
+      },
+      module: {
+        rules: [
+          {
+            test: /\.(jsx?|babel|es6)$/,
+            use: {
+              loader: "babel-loader",
+            },
+            exclude: /node_modules/,
+          },
+          {
+            test: /\.vue$/,
+            loader: "vue-loader",
+            options: {
+              compilerOptions: {
+                preserveWhitespace: false,
+              },
+            },
+          },
+        ],
       }
-    }
+    },
   },
 };

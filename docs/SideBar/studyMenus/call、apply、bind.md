@@ -72,3 +72,26 @@ obj.func.bind(thisObj, ["北京", "工作"])();// 王五22岁了，想去北京,
 由上可知，call()、bind()、apply() 这三个函数的
 `第一个参数都是 this 的指向对象，指向thisObj`，
 第二个参数： `call`的参数是直接逗号隔开，`apply`的所有参数是放在一个数组里传进去，`bind`除了返回一个函数 再调用外，和**call**是一样的。
+
+
+------
+
+
+## 由于`bind()`方法每运行一次都会返回一个**新函数**，这会产生一些问题
+> 比如监听事件的时候 
+```js
+element.addEventListener('click', o.m.bind(o));
+```
+上面代码中，`click`事件绑定`bind()`方法生成的一个匿名函数。这样会导致无法取消绑定，所以下面的代码是无效的。
+```js
+element.removeEventListener('click', o.m.bind(o));  // 无法注销事件绑定
+```
+正确写法如下
+```js
+var listener = o.m.bind(o);
+element.addEventListener('click', listener);
+//  ...具体逻辑
+element.removeEventListener('click', listener);
+```
+
+> 详见阮一峰 [this关键字](https://wangdoc.com/javascript/oop/this.html)
