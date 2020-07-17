@@ -11,6 +11,7 @@ module.exports = {
         ariaLabel: "Study Menu",
         items: [
           { text: "Git", link: "/SideBar/Git/Git工作流程及规范" },
+          { text: "DOM", link: "/SideBar/DOM/DOM" },
           { text: "G6Demo", link: "/SideBar/G6/G6Demo" },
         ],
       },
@@ -20,6 +21,7 @@ module.exports = {
     // 侧栏菜单
     sidebar: {
       "/SideBar/Git/": ["Git工作流程及规范"],
+      "/SideBar/DOM/": ["DOM"],
       "/SideBar/G6/": ["G6Demo"],
       "/SideBar/studyMenus/": [
         "npm",
