@@ -3,6 +3,3 @@
 <ClientOnly>
 <Myvue></Myvue>
 </ClientOnly>
-<!-- <ClientOnly>
-<G6Demo></G6Demo>
-</ClientOnly> -->

@@ -11,12 +11,13 @@
   },
   "author": "tangxun",
   "license": "ISC",
+  "dependencies": {
+    "@antv/g6": "^3.5.10"
+  },
   "devDependencies": {
-    "@antv/g6": "^3.5.10",
     "vue-loader": "^15.9.3",
     "@babel/core": "^7.9.6",
     "babel-loader": "^8.1.0",
     "vuepress": "^1.5.2"
-  },
-  "dependencies": {}
+  }
 }
