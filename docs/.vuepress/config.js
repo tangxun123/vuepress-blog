@@ -34,7 +34,8 @@ module.exports = {
         "Object.defineProperty",
         "call、apply、bind",
         "Array",
-        "axios封装"
+        "axios封装",
+        "正则表达式"
       ],
     },
     lastUpdated: "Last Updated",
