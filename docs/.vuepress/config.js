@@ -13,6 +13,8 @@ module.exports = {
           { text: "Git", link: "/SideBar/Git/Git工作流程及规范" },
           { text: "DOM", link: "/SideBar/DOM/DOM" },
           { text: "Vue", link: "/SideBar/Vue/组件传值" },
+          { text: "React", link: "/SideBar/React/Hook" },
+          { text: "ReactNative", link: "/SideBar/ReactNative/启动页空白" },
           { text: "G6Demo", link: "/SideBar/G6/G6Demo" },
         ],
       },
@@ -24,6 +26,8 @@ module.exports = {
       "/SideBar/Git/": ["Git工作流程及规范"],
       "/SideBar/DOM/": ["DOM"],
       "/SideBar/Vue/": ["组件传值","computed和watch","数据双向绑定原理", "vuex刷新页面数据丢失"],
+      "/SideBar/React/": ["Hook"],
+      "/SideBar/ReactNative/": ["启动页空白","Android打包APK","Navigation导航器"],
       "/SideBar/G6/": ["G6Demo"],
       "/SideBar/studyMenus/": [
         "npm",
