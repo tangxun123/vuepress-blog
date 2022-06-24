@@ -5,6 +5,7 @@ module.exports = {
     // 顶部菜单栏
     nav: [
       { text: "首页", link: "/" },
+      { text: "面试重点", link: "/SideBar/Interview/interview" },
       { text: "学习随笔", link: "/SideBar/studyMenus/npm" },
       {
         text: "知识点",
