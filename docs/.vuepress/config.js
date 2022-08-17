@@ -16,7 +16,7 @@ module.exports = {
           { text: "Vue", link: "/SideBar/Vue/组件传值" },
           { text: "React", link: "/SideBar/React/Hook" },
           { text: "ReactNative", link: "/SideBar/ReactNative/启动页空白" },
-          { text: "G6Demo", link: "/SideBar/G6/G6Demo" },
+          { text: "canvas", link: "/SideBar/Canvas/canvas" },
         ],
       },
       { text: "Github", link: "https://github.com" },
