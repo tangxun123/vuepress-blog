@@ -19,6 +19,7 @@
 
 - Canvas标签的默认大小为：300 x 150 (像素)，而这里咱们设置为了：200 x 200（像素）。
 - Canvas标签中的文字是在不支持Canvas标签的浏览器中使用的，因为支持Canvas标签的浏览器会忽略容器中包含的内容正常渲染Canvas标签，而不支持Canvas标签的浏览器则相反，浏览器会忽略容器而显示其中的内容。
+---
 
 ### 渲染山下文 getContext()
 ```html
@@ -53,10 +54,11 @@
 - webgl2（或 experimental-webgl2）：创建一个 WebGL2RenderingContext 三维渲染上下文对象。只在实现 WebGL 版本2 (OpenGL ES 3.0)的浏览器上可用。
 - bitmaprenderer：创建一个只提供将canvas内容替换为指定ImageBitmap功能的ImageBitmapRenderingContext。
 
+---
 
 
 
-**API**
+### **API**
 Api | 参数 | 说明
 ------------- | ------------ | --------
 beginPath | 无 | 新建一条路径，生成之后，图形绘制命令被指向到路径上
@@ -78,22 +80,23 @@ createLinearGradient(x1, y1, x2, y2) |  起点的坐标和终点的坐标 | 线�
 createRadialGradient(x0, y0, r0, x1, y1, r1) | 参数分别为开始圆的坐标和半径以及结束圆的坐标和半径 | 径向渐变 var gradient = ctx.createLinearGradient(100, 100, 100, 100, 100, 0);
 gradient.addColorStop(offset, color) | color就是颜色，offset 则是颜色0-1的偏移值 | 用法：gradient.addColorStop(0, "red"); gradient.addColorStop(1, "blue");
 createPattern(image, type) | Image 参数可以是一个 Image 对象，也可以是一个 canvas 对象，Type 为图案绘制的类型，可用的类型分别有：repeat，repeat-x，repeat-y 和 no-repeat | 绘制图案效果
-drawImage() | image：绘制到上下文的元素; sx、sy：裁剪框的左上角X轴坐标和Y轴坐标; sWidth、sHeight：裁剪框的宽度和高度; dx、dy：绘制到上下文的元素，在上下文中左上角的X轴坐标和Y轴坐标; dWidth、dHeight：绘制到上下文的元素，在上下文中绘制的宽度和高度。如果不说明，在绘制时image宽度和高度不会缩放 | 绘制图片
+drawImage(image, dx, dy)**绘制** drawImage(image, dx, dy, dWidth, dHeight)**缩放** drawImage(image, sx, sy, sWidth, sHeight, dx, dy, dWidth, dHeight)**裁剪** | image：绘制到上下文的元素; sx、sy：裁剪框的左上角X轴坐标和Y轴坐标; sWidth、sHeight：裁剪框的宽度和高度; dx、dy：绘制到上下文的元素，在上下文中左上角的X轴坐标和Y轴坐标; dWidth、dHeight：绘制到上下文的元素，在上下文中绘制的宽度和高度。如果不说明，在绘制时image宽度和高度不会缩放 | 绘制图片
 strokeText(text, x, y, maxWidth) | text：绘制的文案; x、y：文本的起始位置; maxWidth：可选参数，最大宽度 | 文字描边，需要注意的是当文案大于最大宽度时不是裁剪或者换行，而是缩小字体
 fillText(text, x, y, maxWidth) | text：绘制的文案; x、y：文本的起始位置; maxWidth：可选参数，最大宽度 | 文字填充，需要注意的是当文案大于最大宽度时不是裁剪或者换行，而是缩小字体
 translate(x, y) | x 是左右偏移量，y 是上下偏移量 | 平移
 rotate(angle) | angle是旋转的角度，它是顺时针旋转，以弧度为单位的值 | 旋转
 scale(x, y) | x 为水平缩放的值，y 为垂直缩放得值。x和y的值小于1则为缩小，大于1则为放大。默认值为 1 | 缩放
+transform(a, b, c, d, e, f) | a：水平方向的缩放 ，b：竖直方向的倾斜偏移 ，c：水平方向的倾斜偏移 ，d：竖直方向的缩放 ，e：水平方向的移动 ，f：竖直方向的移动 | 将当前的变形矩阵乘上一个基于自身参数的矩阵
+setTransform(a, b, c, d, e, f) | a：水平方向的缩放 ，b：竖直方向的倾斜偏移 ，c：水平方向的倾斜偏移 ，d：竖直方向的缩放 ，e：水平方向的移动 ，f：竖直方向的移动 | 将当前变形矩阵重置为单位矩阵，然后用相同的参数调用 transform 方法
+resetTransform() | 无 | 重置当前变形为单位矩阵。效果等同于调用 setTransform(1, 0, 0, 1, 0, 0) <sup style="color:red">⑦</sup>
 save() | 无 | 状态的保存 <sup style="color:red">⑥</sup>
 restore() | 无 | 状态的恢复 <sup style="color:red">⑥</sup>
+clip() | 无 | 裁剪。裁剪的作用是遮罩，用来隐藏不需要的部分，所有在路径以外的部分都不会在 canvas 上绘制出来
+clip(path, fillRule) | path为需要剪切的 Path2D 路径，fillRule为判断是在路径内还是在路径外(nonzero（默认值）：非零环绕原则，evenodd：奇偶环绕原则) | 无
+canvas.toDataURL('image/png', quality) | 参数一图片类型：'image/png'，'image/jpeg'；  参数二：quality,可选参数,提供从 0 到 1 的图片质量，1 表示最好品质，0 表示品质最差基本无法辨别。 | 默认设定创建一个 PNG 图片
+---
 
-
-
-
-
-
-
-**Attributes**
+### **Attributes**
 属性 | 说明
 ------ | ------
 lineWidth | 绘线的粗细，属性值必须为正数，默认值是 1.0
@@ -112,10 +115,28 @@ shadowOffsetX | 阴影在 X 轴的延伸距离，负值表示阴影会往左延�
 shadowOffsetY | 阴影在 Y 轴的延伸距离，负值表示阴影会往上延伸，正值则表示会往下延伸，默认为 0
 shadowBlur | 设定阴影的模糊程度，其数值并不跟像素数量挂钩，也不受变换矩阵的影响，默认为 0
 shadowColor | 是标准的 CSS 颜色值，用于设定阴影颜色效果，默认是全透明的黑色
+globalCompositeOperation | **合成** source-over:默认值，在现有画布上下文之上绘制新图形; source-in:新图形只在新图形和目标画布重叠的地方绘制,其他的都是透明的; source-out:在不与现有画布内容重叠的地方绘制新图形; source-atop:新图形只在与现有画布内容重叠的地方绘制; destination-over:在现有的画布内容后面绘制新的图形; destination-in:现有的画布内容保持在新图形和现有画布内容重叠的位置。其他的都是透明的; destination-out:现有内容保持在新图形不重叠的地方; destination-atop:现有的画布只保留与新图形重叠的部分，新的图形是在画布内容后面绘制的; lighter:两个重叠图形的颜色是通过颜色值相加来确定的; copy:只显示新图形; xor:图像中，那些重叠和正常绘制之外的其他地方是透明的; multiply:将顶层像素与底层相应像素相乘，结果是一幅更黑暗的图片; screen:像素被倒转，相乘，再倒转，结果是一幅更明亮的图片  <sup style="color:red">⑧</sup>
+---
+
+### 动画
+在 canvas 上绘制内容是用 canvas 提供的或者自定义的方法，而通常我们仅仅在脚本执行结束后才能看见结果，所以想在 for 循环里面完成动画是不可能的。那么为了实现动画，我们需要一些可以定时执行重绘的方法。
+
+- setInterval(function, delay) ：定时器，当设定好间隔时间后，function 会定期执行。
+- setTimeout(function, delay)：延时器，在设定好的时间之后执行函数
+- requestAnimationFrame(callback)：告诉浏览器你希望执行一个动画，并在重绘之前，请求浏览器执行一个特定的函数来更新动画。
+
+绘制动画的基本步骤
+
+- 清空 canvas：除非接下来要画的内容会完全充满 canvas（例如背景图），否则需要清空所有。最简单的做法就是用 clearRect 方法。
+- 保存 canvas 状态：如果要改变 canvas 状态的设置（样式，变形之类的），之后又要在每画一帧之时都是原始状态的情况时，需要先保存一下 ctx.save()。
+- 绘制动画图形（animated shapes）
+- 恢复 canvas 状态：如果已经保存了 canvas 的状态，可以先恢复它，然后重绘下一帧 ctx.restore()。
+
+
 
 
 ---
-> 注释解析：
+### > 注释解析：
 1. 在开启和关闭路径的时候，关闭路径其实并不是必须的，对于新路径其实每次都开启新路径就可以。
 2. [二次贝塞尔曲线调试工具](http://blogs.sitepointstatic.com/examples/tech/canvas-curves/quadratic-curve.html)
 3. [三次贝塞尔曲线调试工具](http://blogs.sitepointstatic.com/examples/tech/canvas-curves/bezier-curve.html)
@@ -128,3 +149,8 @@ shadowColor | 是标准的 CSS 颜色值，用于设定阴影颜色效果，默�
 - canvas 在绘画的过程中难免会改变整个画布，导致坐标错位等情况，所以在我们改变整个画布之前使用save() 保存一下画布，在我们需要他回复之前的状态的时候使用restore()回到之前的状态
 - 在Canvas环境中绘图时，canvas 状态是以堆(stack)的方式保存的，每一次调用 save 方法，当前的状态就会被推入堆中保存起来，调用restore()方法时，就会把上一次记录的绘图状态从堆栈中弹出
 - 出栈的次数不能多于入栈的次数，故程序中**restore()方法调用的次数不应该比save()方法多**。
+7. 需要注意的是transform方法和setTransform方法中如果任意一个参数是无限大（Infinity），那么变形矩阵也必须被标记为无限大，否则会抛出异常。
+8. 合成的图形受限于绘制的顺序。如果我们不想受限于绘制的顺序，那么我们可以利用 globalCompositeOperation 属性来改变这种情况
+
+
+
