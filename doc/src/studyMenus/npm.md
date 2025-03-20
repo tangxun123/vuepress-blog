@@ -39,8 +39,7 @@ npm init -y
  "version": "0.0.1"    //必填版本信息
  "main":'./dist/index.js'   //暴露的文件地址名称
 ```
-#### 登录npm  ,没有账号去  [https://www.npmjs.com/]()   注册账号
-
+#### 登录npm  ,没有账号去 [npm](https://www.npmjs.com) 注册账号
 ```js
  npm login    //输入用户名、密码和邮箱
 ```

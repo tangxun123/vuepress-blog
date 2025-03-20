@@ -4,14 +4,17 @@ layout: home
 
 hero:
   name: "TX BLOG"
-  text: "personal blog project"
+  text: "一个爱写东西的人"
+  image:
+    src: /logo.jpg
+    alt: TX
   actions:
-    - theme: brand
+    - theme: alt
       text: 面试重点
-      link: /SideBar/Interview/interview
+      link: /src/Interview/interview
     - theme: alt
       text: 学习随笔
-      link: /SideBar/studyMenus/npm
+      link: /src/studyMenus/npm
 
 features:
 - title: 简洁至上

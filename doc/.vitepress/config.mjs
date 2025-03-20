@@ -7,14 +7,18 @@ export default defineConfig({
   outDir: "dist",
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
+    logo: '/logo.jpg',
     nav: [
       { text: "首页", link: "/" },
-      // { text: "面试重点", link: "/src/Interview/interview" },
       { text: "全部概览", link: "/src/Git/Git工作流程及规范" },
+      { text: "面试重点", link: "/src/Interview/interview" },
+      {
+        component: 'demo'
+      }
     ],
 
     sidebar: [
-        {
+      {
         text: "Git",link: "/src/Git/Git工作流程及规范"
       },
       {
@@ -23,6 +27,8 @@ export default defineConfig({
         items: [
           { text: "npm", link: "/src/studyMenus/npm" },
           { text: "markDown", link: "/src/studyMenus/markDown" },
+          { text: "DOM", link: "/src/DOM/DOM" },
+          { text: "Canvas", link: "/src/Canvas/markDowcanvasn" },
           { text: "babel", link: "/src/studyMenus/babel" },
           { text: "dist", link: "/src/studyMenus/dist" },
           { text: "emotion", link: "/src/studyMenus/emotion" },
@@ -37,10 +43,25 @@ export default defineConfig({
         text: "Vue",
         collapsed: true,
         items: [
-          { text: "组件传值", link: "/src/Vue/组件传值" },
-          { text: "computed和watch", link: "/src/Vue/computed和watch" },
-          { text: "数据双向绑定原理", link: "/src/Vue/数据双向绑定原理" },
-          { text: "vuex刷新页面数据丢失", link: "/src/Vue/vuex刷新页面数据丢失" },
+          { text: "Object.defineProperty和Proxy", link: "/src/Vue/Object.defineProperty和Proxy" },
+          { 
+            text: "vue2", 
+            collapsed: true,
+            items: [
+              { text: "组件传值", link: "/src/Vue/vue2/组件传值" },
+              { text: "数据双向绑定原理", link: "/src/Vue/vue2/数据双向绑定原理" },
+              { text: "computed和watch", link: "/src/Vue/vue2/computed和watch" },
+              { text: "vuex刷新页面数据丢失", link: "/src/Vue/vue2/vuex刷新页面数据丢失" },
+            ] 
+          },
+          { 
+            text: "vue3", 
+            collapsed: true,
+            items: [
+              { text: "组件传值", link: "/src/Vue/vue3/组件传值" },
+              { text: "生成二维码", link: "/src/Vue/vue3/生成二维码" },
+            ] 
+          },
         ],
       },
       {
@@ -53,10 +74,18 @@ export default defineConfig({
           { text: "Navigation导航器", link: "/src/ReactNative/Navigation导航器" },
         ],
       },
+      {
+        text: "每日一学",
+        collapsed: true,
+        items: [
+          { text: "对象数组去重", link: "/src/js/对象数组去重" },
+          { text: "取数组的交集并集差集", link: "/src/js/取数组的交集并集差集" },
+        ],
+      },
     ],
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/' }
+      { icon: 'github', link: 'https://github.com/' },
     ],
 
     docFooter: {
