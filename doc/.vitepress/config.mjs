@@ -4,10 +4,14 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   title: "TX BLOG",
   description: "personal blog project",
-  outDir: "dist",
+  outDir: "../dist",
+  ignoreDeadLinks: true, // 忽略死连接
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     logo: '/logo.jpg',
+    search: {
+      provider: 'local',
+    },
     nav: [
       { text: "首页", link: "/" },
       { text: "全部概览", link: "/src/Git/Git工作流程及规范" },
@@ -18,27 +22,7 @@ export default defineConfig({
     ],
 
     sidebar: [
-      {
-        text: "Git",link: "/src/Git/Git工作流程及规范"
-      },
-      {
-        text: "学习随笔",
-        collapsed: true,
-        items: [
-          { text: "npm", link: "/src/studyMenus/npm" },
-          { text: "markDown", link: "/src/studyMenus/markDown" },
-          { text: "DOM", link: "/src/DOM/DOM" },
-          { text: "Canvas", link: "/src/Canvas/markDowcanvasn" },
-          { text: "babel", link: "/src/studyMenus/babel" },
-          { text: "dist", link: "/src/studyMenus/dist" },
-          { text: "emotion", link: "/src/studyMenus/emotion" },
-          { text: "Object.defineProperty", link: "/src/studyMenus/Object.defineProperty" },
-          { text: "call、apply、bind", link: "/src/studyMenus/call、apply、bind" },
-          { text: "Array", link: "/src/studyMenus/Array" },
-          { text: "axios封装", link: "/src/studyMenus/axios封装" },
-          { text: "正则表达式", link: "/src/studyMenus/正则表达式" },
-        ],
-      },
+      { text: "Git",link: "/src/Git/Git工作流程及规范" },
       {
         text: "Vue",
         collapsed: true,
@@ -60,6 +44,8 @@ export default defineConfig({
             items: [
               { text: "组件传值", link: "/src/Vue/vue3/组件传值" },
               { text: "生成二维码", link: "/src/Vue/vue3/生成二维码" },
+              { text: "Reactive", link: "/src/Vue/vue3/reactive" },
+              { text: "nextTick", link: "/src/Vue/vue3/nextTick" },
             ] 
           },
         ],
@@ -80,6 +66,26 @@ export default defineConfig({
         items: [
           { text: "对象数组去重", link: "/src/js/对象数组去重" },
           { text: "取数组的交集并集差集", link: "/src/js/取数组的交集并集差集" },
+          { text: "Promise 实现", link: "/src/js/Promise 实现" },
+          { text: "前端图片优化", link: "/src/js/前端图片优化" },
+        ],
+      },
+      {
+        text: "学习随笔",
+        collapsed: true,
+        items: [
+          { text: "markDown", link: "/src/studyMenus/markDown" },
+          { text: "DOM", link: "/src/DOM/DOM" },
+          { text: "npm", link: "/src/studyMenus/npm" },
+          { text: "Object.defineProperty", link: "/src/studyMenus/Object.defineProperty" },
+          { text: "Array", link: "/src/studyMenus/Array" },
+          { text: "axios封装", link: "/src/studyMenus/axios封装" },
+          { text: "Canvas", link: "/src/Canvas/markDowcanvasn" },
+          { text: "babel", link: "/src/studyMenus/babel" },
+          { text: "dist", link: "/src/studyMenus/dist" },
+          { text: "emotion", link: "/src/studyMenus/emotion" },
+          { text: "call、apply、bind", link: "/src/studyMenus/call、apply、bind" },
+          { text: "正则表达式", link: "/src/studyMenus/正则表达式" },
         ],
       },
     ],

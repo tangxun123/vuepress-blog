@@ -1,3 +1,13 @@
 #doc-outline-aria-label {
     display: none;
 }
+
+.VPImage.image-src {
+    width: 240px;
+}
+
+.image-bg {
+    width: 240px !important;
+    height: 240px !important;
+    --vp-home-hero-image-filter: blur(75px);
+}

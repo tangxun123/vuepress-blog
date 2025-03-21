@@ -1,7 +1,7 @@
 ---
 highlight: a11y-dark
 ---
-## React 之 Hook
+# React 之 Hook
 
 ### 什么是 Hook?
 > Hook 是 React 16.8 的新增特性。它可以让你在不编写 class 的情况下使用 state 以及其他的 React 特性`（如 函数式组件）`。

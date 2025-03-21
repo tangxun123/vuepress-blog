@@ -1,7 +1,7 @@
 ---
 highlight: a11y-dark
 ---
-## react-native 导航器
+# react-native 导航器
 
 ### 1. 安装依赖
 ```json

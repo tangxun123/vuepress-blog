@@ -1,36 +1,23 @@
-
-let objData = {
-    a: 1,
-    b: 2,
-    c: {
-        d: 3,
-        e: 4
+// 使用 for...of 循环结合 await
+async function processItems(items) {
+  for (const item of items) {
+    try {
+      const result = await processItem(item);
+      console.log(`处理项目 ${item} 成功:`, result);
+    } catch (error) {
+      console.error(`处理项目 ${item} 失败:`, error);
     }
+  }
 }
-const isObject = (obj) => {
-    return typeof obj === 'object' && obj !== null
+
+// 使用普通 for 循环结合 await
+async function processWithIndex(items) {
+  for (let i = 0; i < items.length; i++) {
+    try {
+      const result = await processItem(items[i]);
+      console.log(`处理第 ${i + 1} 个项目成功:`, result);
+    } catch (error) {
+      console.error(`处理第 ${i + 1} 个项目失败:`, error); 
+    }
+  }
 }
-const reactive = (obj) => {
-    if (!isObject(obj))  return obj;
-    return new Proxy(obj, {
-        get(target, key, receiver) {
-            const res = Reflect.get(target, key, receiver)
-            if (isObject(res)) {
-                return reactive(res)
-            }
-            console.log('get', key, res)
-            return res
-        },
-        set(target, key, value, receiver) {
-            const res = Reflect.set(target, key, value, receiver)
-            console.log('set', key, value)
-            return res
-        }
-    })
-}
-const proxyObj = reactive(objData)
-proxyObj.a;
-proxyObj.a = 5;
-proxyObj.c.d;
-proxyObj.c.d = 6;
-proxyObj.c.f = 7;

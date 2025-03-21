@@ -13,6 +13,9 @@ const changeFullWidth = () => {
 
 <template>
   <Layout>
+    <!-- <template #home-hero-image>
+        <img src="/logo.jpg" alt="logo" class="logo" />
+    </template> -->
     <template #nav-bar-content-after>
       <button class="full-width-button" @click="changeFullWidth">{{fullWidth ? '默认布局' : '宽屏布局'}}</button>
     </template>

@@ -1,7 +1,7 @@
 ---
 highlight: a11y-dark
 ---
-## React Native Android 打包APK
+# React Native Android 打包APK
 
 ####  生产签名密匙
 
