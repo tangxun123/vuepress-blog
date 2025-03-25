@@ -1,76 +1,61 @@
 {
-  "hash": "0cefd9c2",
+  "hash": "b8594f9c",
   "configHash": "174291d3",
-  "lockfileHash": "720d10ad",
-  "browserHash": "4270b3c5",
+  "lockfileHash": "a0cd62c1",
+  "browserHash": "f1aae877",
   "optimized": {
     "vue": {
       "src": "../../../../node_modules/vue/dist/vue.runtime.esm-bundler.js",
       "file": "vue.js",
-      "fileHash": "7e711c65",
+      "fileHash": "a9f76b63",
       "needsInterop": false
     },
     "vitepress > @vue/devtools-api": {
       "src": "../../../../node_modules/@vue/devtools-api/dist/index.js",
       "file": "vitepress___@vue_devtools-api.js",
-      "fileHash": "198d15ff",
+      "fileHash": "7b9fdc3a",
       "needsInterop": false
     },
     "vitepress > @vueuse/core": {
       "src": "../../../../node_modules/@vueuse/core/index.mjs",
       "file": "vitepress___@vueuse_core.js",
-      "fileHash": "496ee9e5",
+      "fileHash": "80fce877",
       "needsInterop": false
     },
     "vitepress > @vueuse/integrations/useFocusTrap": {
       "src": "../../../../node_modules/@vueuse/integrations/useFocusTrap.mjs",
       "file": "vitepress___@vueuse_integrations_useFocusTrap.js",
-      "fileHash": "64228d5a",
+      "fileHash": "c64dabaa",
       "needsInterop": false
     },
     "vitepress > mark.js/src/vanilla.js": {
       "src": "../../../../node_modules/mark.js/src/vanilla.js",
       "file": "vitepress___mark__js_src_vanilla__js.js",
-      "fileHash": "9b58380d",
+      "fileHash": "e543efb1",
       "needsInterop": false
     },
     "vitepress > minisearch": {
       "src": "../../../../node_modules/minisearch/dist/es/index.js",
       "file": "vitepress___minisearch.js",
-      "fileHash": "5e472309",
-      "needsInterop": false
-    },
-    "axios": {
-      "src": "../../../../node_modules/axios/index.js",
-      "file": "axios.js",
-      "fileHash": "2080a208",
+      "fileHash": "c8516034",
       "needsInterop": false
     },
     "element-plus": {
       "src": "../../../../node_modules/element-plus/es/index.mjs",
       "file": "element-plus.js",
-      "fileHash": "d6f01166",
-      "needsInterop": false
-    },
-    "@element-plus/icons-vue": {
-      "src": "../../../../node_modules/@element-plus/icons-vue/dist/index.js",
-      "file": "@element-plus_icons-vue.js",
-      "fileHash": "10a43e74",
+      "fileHash": "f77474d7",
       "needsInterop": false
     },
     "markdown-it": {
       "src": "../../../../node_modules/markdown-it/index.mjs",
       "file": "markdown-it.js",
-      "fileHash": "b4f0bb13",
+      "fileHash": "f02ea6be",
       "needsInterop": false
     }
   },
   "chunks": {
     "chunk-KIYETMC7": {
       "file": "chunk-KIYETMC7.js"
-    },
-    "chunk-K7JYRSNN": {
-      "file": "chunk-K7JYRSNN.js"
     },
     "chunk-SSSTV3QS": {
       "file": "chunk-SSSTV3QS.js"

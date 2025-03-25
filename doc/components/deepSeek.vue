@@ -1,5 +1,5 @@
 <template>
-    <el-drawer v-model="visible" size="70%" title="DeepSeek">
+    <el-drawer v-model="visible" size="70%" title="DeepSeek" class="blog-drawer">
         <div class="answer-container">
             <div v-for="(item, index) in messages">
                 <!-- 问题 -->
@@ -11,7 +11,6 @@
                     <img src="/deepSeek.svg" alt="" class="deepSeek-svg" />
                     <span v-html="renderMd(item.content)"></span>
                 </div>
-                <!-- <div v-if="index % 2 === 1" class="loading" v-loading="isLoading"></div> -->
             </div>
             <div class="loading" v-loading="isLoading"></div>
         </div>
@@ -27,7 +26,7 @@
 </template>
 <script setup>
 import { onUnmounted, ref } from 'vue';
-import { ElDrawer, ElInput, ElButton,ElMessage, vLoading } from 'element-plus';
+import { ElDrawer, ElInput, ElButton, ElMessage, vLoading } from 'element-plus';
 import MarkdownIt from 'markdown-it';
 const apiKey = 'sk-7f41d9092acd4a24989b78b4ea8a5f9b';
 const baseURL = 'https://api.deepseek.com/v1';
@@ -46,7 +45,7 @@ const askAQuestion = async () => {
     if (!question.value) return ElMessage.warning('请输入你的问题！！！');
     isLoading.value = true;
     messages.value.push({ role: 'user', content: question.value });
-    messages.value.push({ role: 'assistant',  content: '' });
+    messages.value.push({ role: 'assistant', content: '' });
     try {
         const response = await fetch(
             `${baseURL}/chat/completions`,
@@ -102,62 +101,91 @@ onUnmounted(() => {
     messages.value = [];
 })
 </script>
-<style scoped>
+<style scoped lang="scss">
 .answer-container {
     border: 1px solid #cccccc82;
     margin-bottom: 12px;
     padding: 12px;
     height: 80vh;
     overflow-y: scroll;
-}
 
-.user-content {
-    padding: 6px 10px;
-    margin-bottom: 12px;
-    border-radius: 20px;
-    background-color: #eff6ff;
-}
+    &::-webkit-scrollbar {
+        width: 4px;
+        height: 6px;
+    }
 
-.assistant-content {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    padding-left: 48px;
-    position: relative;
-}
+    &::-webkit-scrollbar-thumb {
+        width: 8px;
+        height: 79px;
+        border-radius: 6px;
+        background-color: #ccc;
+    }
 
-.assistant-content span {
-    border-left: 2px solid #e5e5e5;
-    padding-left: 12px;
-}
+    &::-webkit-scrollbar-track {
+        border-radius: 6px;
+    }
 
-.assistant-content .deepSeek-svg {
-    width: 36px;
-    margin-right: 12px;
-    position: absolute;
-    top: 0;
-    left: 0;
-}
+    .user-content {
+        padding: 6px 10px;
+        margin-bottom: 12px;
+        border-radius: 20px;
+        background-color: #eff6ff;
+    }
 
-.loading {
-    width: 12px;
-    height: 12px;
-    margin: 16px 48px;
-}
+    .assistant-content {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        padding-left: 48px;
+        position: relative;
 
-.answer-container::-webkit-scrollbar {
-    width: 4px;
-    height: 6px;
-}
+        span {
+            border-left: 2px solid #e5e5e5;
+            padding-left: 12px;
+        }
 
-.answer-container::-webkit-scrollbar-thumb {
-    width: 8px;
-    height: 79px;
-    border-radius: 6px;
-    background-color: #ccc;
-}
+        .deepSeek-svg {
+            width: 36px;
+            margin-right: 12px;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    }
 
-.answer-container::-webkit-scrollbar-track {
-    border-radius: 6px;
+    .loading {
+        width: 48px;
+        height: 48px;
+        margin: 16px 48px;
+    }
+}
+</style>
+<style lang="scss">
+.dark {
+    --custom-dark-bg: rgb(27, 27, 31);
+    --el-input-text-color: var(--vp-c-text-1);
+    .el-drawer.blog-drawer {
+        --el-bg-color: var(--custom-dark-bg);
+        .el-drawer__header {
+            color: var(--vp-c-text-1);
+        }
+        .user-content {
+            background-color: var(--vp-button-alt-bg);
+        }
+    }
+    .el-input-group__append button.el-button {
+        background-color: var(--vp-button-alt-bg);
+        border-color: var(--vp-c-text-1);
+        color: var(--vp-c-text-1);
+    }
+    .el-loading-mask {
+        --el-mask-color: var(--custom-dark-bg);
+    }
+    .el-input__wrapper {
+        --el-input-bg-color: var(--custom-dark-bg);
+        .el-input__inner {
+            color: var(--vp-c-text-1);
+        }
+    }
 }
 </style>
