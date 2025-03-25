@@ -4,8 +4,8 @@
         <img src="/logo.jpg" alt="logo" class="logo" />
     </template> -->
     <template #nav-bar-content-after>
-      <button class="full-width-button" @click="changeFullWidth">{{fullWidth ? '默认布局' : '宽屏布局'}}</button>
       <button class="full-width-button" @click="openDeepSeek">DeepSeek</button>
+      <button class="full-width-button" @click="changeFullWidth">{{fullWidth ? '默认布局' : '宽屏布局'}}</button>
     </template>
     <template #aside-outline-before>
         <div class="outline-title">页面导航</div>
