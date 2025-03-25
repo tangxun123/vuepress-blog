@@ -1,4 +1,4 @@
-# dist包无法在浏览器中直接打开
+# dist包如何在浏览器中直接打开
 
 ## index.html为什么打不开？
 Vue打包后生成的dist文件中的index.html，双击在浏览器中打开后发现一片空白，打开控制台有很多报错：“Failed to load resource: net::ERR_FILE_NOT_FOUND”。

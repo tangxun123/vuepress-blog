@@ -1,6 +1,6 @@
 # Canvas
 
-### 基本用法
+## 基本用法
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -23,7 +23,7 @@
 - Canvas标签中的文字是在不支持Canvas标签的浏览器中使用的，因为支持Canvas标签的浏览器会忽略容器中包含的内容正常渲染Canvas标签，而不支持Canvas标签的浏览器则相反，浏览器会忽略容器而显示其中的内容。
 ---
 
-### 渲染山下文 getContext()
+## 渲染山下文 getContext()
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -60,7 +60,7 @@
 
 
 
-### **API**
+## **API**
 Api | 参数 | 说明
 ------------- | ------------ | --------
 beginPath | 无 | 新建一条路径，生成之后，图形绘制命令被指向到路径上
@@ -98,7 +98,7 @@ clip(path, fillRule) | path为需要剪切的 Path2D 路径，fillRule为判断�
 canvas.toDataURL('image/png', quality) | 参数一图片类型：'image/png'，'image/jpeg'；  参数二：quality,可选参数,提供从 0 到 1 的图片质量，1 表示最好品质，0 表示品质最差基本无法辨别。 | 默认设定创建一个 PNG 图片
 ---
 
-### **Attributes**
+## **Attributes**
 属性 | 说明
 ------ | ------
 lineWidth | 绘线的粗细，属性值必须为正数，默认值是 1.0
@@ -120,7 +120,7 @@ shadowColor | 是标准的 CSS 颜色值，用于设定阴影颜色效果，默�
 globalCompositeOperation | **合成** source-over:默认值，在现有画布上下文之上绘制新图形; source-in:新图形只在新图形和目标画布重叠的地方绘制,其他的都是透明的; source-out:在不与现有画布内容重叠的地方绘制新图形; source-atop:新图形只在与现有画布内容重叠的地方绘制; destination-over:在现有的画布内容后面绘制新的图形; destination-in:现有的画布内容保持在新图形和现有画布内容重叠的位置。其他的都是透明的; destination-out:现有内容保持在新图形不重叠的地方; destination-atop:现有的画布只保留与新图形重叠的部分，新的图形是在画布内容后面绘制的; lighter:两个重叠图形的颜色是通过颜色值相加来确定的; copy:只显示新图形; xor:图像中，那些重叠和正常绘制之外的其他地方是透明的; multiply:将顶层像素与底层相应像素相乘，结果是一幅更黑暗的图片; screen:像素被倒转，相乘，再倒转，结果是一幅更明亮的图片  <sup style="color:red">⑧</sup>
 ---
 
-### 动画
+## 动画
 在 canvas 上绘制内容是用 canvas 提供的或者自定义的方法，而通常我们仅仅在脚本执行结束后才能看见结果，所以想在 for 循环里面完成动画是不可能的。那么为了实现动画，我们需要一些可以定时执行重绘的方法。
 
 - setInterval(function, delay) ：定时器，当设定好间隔时间后，function 会定期执行。
@@ -138,7 +138,7 @@ globalCompositeOperation | **合成** source-over:默认值，在现有画布上
 
 
 ---
-### > 注释解析：
+## 注释解析：
 1. 在开启和关闭路径的时候，关闭路径其实并不是必须的，对于新路径其实每次都开启新路径就可以。
 2. [二次贝塞尔曲线调试工具](http://blogs.sitepointstatic.com/examples/tech/canvas-curves/quadratic-curve.html)
 3. [三次贝塞尔曲线调试工具](http://blogs.sitepointstatic.com/examples/tech/canvas-curves/bezier-curve.html)

@@ -6,5 +6,10 @@
   },
   "devDependencies": {
     "vitepress": "^1.6.3"
+  },
+  "dependencies": {
+    "axios": "^1.8.4",
+    "element-plus": "^2.9.7",
+    "markdown-it": "^14.1.0"
   }
 }

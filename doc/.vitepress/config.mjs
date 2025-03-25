@@ -16,9 +16,9 @@ export default defineConfig({
       { text: "首页", link: "/" },
       { text: "全部概览", link: "/src/Git/Git工作流程及规范" },
       { text: "面试重点", link: "/src/Interview/interview" },
-      {
-        component: 'demo'
-      }
+      // {
+      //   component: 'deepSeek'
+      // }
     ],
 
     sidebar: [
@@ -28,6 +28,8 @@ export default defineConfig({
         collapsed: true,
         items: [
           { text: "Object.defineProperty和Proxy", link: "/src/Vue/Object.defineProperty和Proxy" },
+          { text: "路由模式", link: "/src/Vue/路由模式" },
+          { text: "vue面试题", link: "/src/Vue/vue面试题" },
           { 
             text: "vue2", 
             collapsed: true,
@@ -46,6 +48,7 @@ export default defineConfig({
               { text: "生成二维码", link: "/src/Vue/vue3/生成二维码" },
               { text: "Reactive", link: "/src/Vue/vue3/reactive" },
               { text: "nextTick", link: "/src/Vue/vue3/nextTick" },
+              { text: "vite打包优化", link: "/src/Vue/vue3/vite打包优化" },
             ] 
           },
         ],
@@ -68,6 +71,7 @@ export default defineConfig({
           { text: "取数组的交集并集差集", link: "/src/js/取数组的交集并集差集" },
           { text: "Promise 实现", link: "/src/js/Promise 实现" },
           { text: "前端图片优化", link: "/src/js/前端图片优化" },
+          { text: "for循环，中断外层循环", link: "/src/js/for循环，中断外层循环" },
         ],
       },
       {
@@ -76,16 +80,17 @@ export default defineConfig({
         items: [
           { text: "markDown", link: "/src/studyMenus/markDown" },
           { text: "DOM", link: "/src/DOM/DOM" },
-          { text: "npm", link: "/src/studyMenus/npm" },
+          { text: "npm、nvm、nrm", link: "/src/studyMenus/npm" },
           { text: "Object.defineProperty", link: "/src/studyMenus/Object.defineProperty" },
-          { text: "Array", link: "/src/studyMenus/Array" },
+          { text: "判断是否是Array类型", link: "/src/studyMenus/Array" },
           { text: "axios封装", link: "/src/studyMenus/axios封装" },
-          { text: "Canvas", link: "/src/Canvas/markDowcanvasn" },
+          { text: "Canvas使用", link: "/src/Canvas/canvas" },
           { text: "babel", link: "/src/studyMenus/babel" },
-          { text: "dist", link: "/src/studyMenus/dist" },
-          { text: "emotion", link: "/src/studyMenus/emotion" },
-          { text: "call、apply、bind", link: "/src/studyMenus/call、apply、bind" },
+          { text: "dist包如何在浏览器中直接打开", link: "/src/studyMenus/dist" },
+          { text: "emotion表情", link: "/src/studyMenus/emotion" },
+          { text: "call、apply、bind的用法和区别", link: "/src/studyMenus/call、apply、bind" },
           { text: "正则表达式", link: "/src/studyMenus/正则表达式" },
+          { text: "网站一键置灰", link: "/src/studyMenus/网站一键置灰" },
         ],
       },
     ],
