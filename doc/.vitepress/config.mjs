@@ -91,7 +91,7 @@ export default defineConfig({
           { text: "call、apply、bind的用法和区别", link: "/src/studyMenus/call、apply、bind" },
           { text: "正则表达式", link: "/src/studyMenus/正则表达式" },
           { text: "网站一键置灰", link: "/src/studyMenus/网站一键置灰" },
-          { text: "前端对于流式数据的接受", link: "/src/studyMenus/前端对于流式数据的接受" },
+          { text: "对流式数据的渲染", link: "/src/studyMenus/对流式数据的渲染" },
         ],
       },
     ],
