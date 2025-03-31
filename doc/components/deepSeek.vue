@@ -64,7 +64,7 @@ const askAQuestion = async () => {
             }
         )
         answerIndex.value += 2;
-
+        question.value = '';
         const reader = response.body.getReader();
         const decoder = new TextDecoder();
         let buffer = '';
@@ -163,7 +163,6 @@ onUnmounted(() => {
 <style lang="scss">
 .dark {
     --custom-dark-bg: rgb(27, 27, 31);
-    --el-input-text-color: var(--vp-c-text-1);
     .el-drawer.blog-drawer {
         --el-bg-color: var(--custom-dark-bg);
         .el-drawer__header {
@@ -173,19 +172,8 @@ onUnmounted(() => {
             background-color: var(--vp-button-alt-bg);
         }
     }
-    .el-input-group__append button.el-button {
-        background-color: var(--vp-button-alt-bg);
-        border-color: var(--vp-c-text-1);
-        color: var(--vp-c-text-1);
-    }
     .el-loading-mask {
         --el-mask-color: var(--custom-dark-bg);
-    }
-    .el-input__wrapper {
-        --el-input-bg-color: var(--custom-dark-bg);
-        .el-input__inner {
-            color: var(--vp-c-text-1);
-        }
     }
 }
 </style>

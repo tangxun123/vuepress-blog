@@ -34,20 +34,20 @@ export default defineConfig({
             text: "vue2", 
             collapsed: true,
             items: [
-              { text: "组件传值", link: "/src/Vue/vue2/组件传值" },
+              { text: "组件通信", link: "/src/Vue/vue2/组件传值" },
               { text: "数据双向绑定原理", link: "/src/Vue/vue2/数据双向绑定原理" },
               { text: "computed和watch", link: "/src/Vue/vue2/computed和watch" },
               { text: "vuex刷新页面数据丢失", link: "/src/Vue/vue2/vuex刷新页面数据丢失" },
+              { text: "生成二维码", link: "/src/Vue/vue2/生成二维码" },
             ] 
           },
           { 
             text: "vue3", 
             collapsed: true,
             items: [
-              { text: "组件传值", link: "/src/Vue/vue3/组件传值" },
-              { text: "生成二维码", link: "/src/Vue/vue3/生成二维码" },
               { text: "Reactive", link: "/src/Vue/vue3/reactive" },
               { text: "nextTick", link: "/src/Vue/vue3/nextTick" },
+              { text: "自定义Ref", link: "/src/Vue/vue3/自定义Ref" },
               { text: "vite打包优化", link: "/src/Vue/vue3/vite打包优化" },
             ] 
           },
@@ -92,6 +92,8 @@ export default defineConfig({
           { text: "正则表达式", link: "/src/studyMenus/正则表达式" },
           { text: "网站一键置灰", link: "/src/studyMenus/网站一键置灰" },
           { text: "对流式数据的渲染", link: "/src/studyMenus/对流式数据的渲染" },
+          { text: "内存泄露和闭包、作用域", link: "/src/studyMenus/内存泄露和闭包、作用域" },
+          { text: "sessionStorage、localStorage、cookie", link: "/src/studyMenus/sessionStorage、localStorage、cookie" },
         ],
       },
     ],

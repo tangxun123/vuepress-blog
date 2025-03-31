@@ -5,6 +5,7 @@ import layout from './layout.vue'; // 自定义布局 插槽方式
 import './style.css'
 import './custom.css'
 import 'element-plus/dist/index.css';
+import 'element-plus/theme-chalk/dark/css-vars.css'
 import deepSeek from '/components/deepSeek.vue'; // 自定义组件
 
 /** @type {import('vitepress').Theme} */
