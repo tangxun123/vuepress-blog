@@ -168,3 +168,32 @@ Vue.prototype.$nextTick = function (fn) {
   nextTick(job.fn);
 };
 ```
+
+## nextTick 总结
+
+1. nextTick 的作用
+- nextTick 是 Vue 提供的一个全局 API,用于在下次 DOM 更新循环结束之后执行延迟回调
+- 当数据发生变化时,Vue 不会立即更新 DOM,而是将更新操作放入异步队列
+- 使用 nextTick 可以在 DOM 更新完成后再执行某些操作
+
+2. 实现原理
+- Vue 会维护一个异步更新队列
+- 当数据变化时,将要更新的 watcher 推入队列
+- 通过 Promise.then 等微任务来异步执行队列中的更新操作
+- nextTick 的回调也会被加入这个队列,确保在 DOM 更新后执行
+
+3. 使用场景
+- 在修改数据后立即操作新 DOM 时
+- 在 created 钩子中需要操作 DOM 时
+- 在数据变化后需要获取更新后的 DOM 中的值时
+
+4. Vue2 和 Vue3 的区别
+- Vue2 中通过原型方法 $nextTick 调用
+- Vue3 中可以直接导入 nextTick 方法使用
+- Vue3 的实现更加简洁高效,使用 Promise 微任务
+
+5. 注意事项
+- nextTick 是异步执行的,要注意代码的执行顺序
+- 多个 nextTick 会被合并到一个异步任务中执行
+- 在实际开发中要合理使用,避免过度依赖
+

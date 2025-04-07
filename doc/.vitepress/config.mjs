@@ -45,6 +45,7 @@ export default defineConfig({
             text: "vue3", 
             collapsed: true,
             items: [
+              { text: "组件通信", link: "/src/Vue/vue3/组件通信" },
               { text: "Reactive", link: "/src/Vue/vue3/reactive" },
               { text: "nextTick", link: "/src/Vue/vue3/nextTick" },
               { text: "自定义Ref", link: "/src/Vue/vue3/自定义Ref" },
@@ -72,6 +73,7 @@ export default defineConfig({
           { text: "Promise 实现", link: "/src/js/Promise 实现" },
           { text: "前端图片优化", link: "/src/js/前端图片优化" },
           { text: "for循环，中断外层循环", link: "/src/js/for循环，中断外层循环" },
+          { text: "防抖和节流", link: "/src/js/防抖和节流" },
         ],
       },
       {
