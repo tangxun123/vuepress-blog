@@ -80,6 +80,7 @@ export default defineConfig({
         text: "学习随笔",
         collapsed: true,
         items: [
+          { text: "nginx 使用技巧", link: "/src/studyMenus/nginx" },
           { text: "markDown", link: "/src/studyMenus/markDown" },
           { text: "DOM", link: "/src/DOM/DOM" },
           { text: "npm、nvm、nrm", link: "/src/studyMenus/npm" },
