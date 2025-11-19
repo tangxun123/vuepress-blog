@@ -15,7 +15,8 @@ export default defineConfig({
     nav: [
       { text: "首页", link: "/" },
       { text: "全部概览", link: "/src/Git/Git工作流程及规范" },
-      { text: "面试重点", link: "/src/Interview/interview" },
+      { text: "面试题", link: "/src/Interview/interview" },
+      { text: "实际面试", link: "/src/Interview/实际问题.md" },
       // {
       //   component: 'deepSeek'
       // }
