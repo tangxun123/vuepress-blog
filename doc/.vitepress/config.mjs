@@ -31,6 +31,7 @@ export default defineConfig({
           { text: "Object.defineProperty和Proxy", link: "/src/Vue/Object.defineProperty和Proxy" },
           { text: "路由模式", link: "/src/Vue/路由模式" },
           { text: "vue面试题", link: "/src/Vue/vue面试题" },
+          { text: "webpack和vite", link: "/src/Vue/webpack和vite" },
           { 
             text: "vue2", 
             collapsed: true,
