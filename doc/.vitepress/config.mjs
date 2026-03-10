@@ -52,6 +52,7 @@ export default defineConfig({
               { text: "nextTick", link: "/src/Vue/vue3/nextTick" },
               { text: "自定义Ref", link: "/src/Vue/vue3/自定义Ref" },
               { text: "vite打包优化", link: "/src/Vue/vue3/vite打包优化" },
+              { text: "vue-skills", link: "/src/Vue/vue3/vue-skills" },
             ] 
           },
         ],
